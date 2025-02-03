@@ -1,0 +1,408 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+
+  body {
+      font-family: 'Roboto', sans-serif;
+      /* background: linear-gradient(to right, #b6f492, #338b93); */
+      background-color: #141514;
+      color: #333;
+      min-height: 100vh;
+      max-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* overflow-y: auto;
+      overflow-x: hidden; */
+      overflow: hidden;
+      flex-direction: column;
+  }
+
+  .mu-logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 30px;
+      opacity: .8;
+
+      img {
+          width: 80px;
+      }
+
+  }
+
+  .navbar {
+      width: 100%;
+      background-color: transparent;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: flex-end;
+  }
+
+  .nav-container {
+      max-width: 10%;
+      margin: 0;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  }
+
+  .nav-logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+  }
+
+  .nav-menu {
+      list-style: none;
+      display: flex;
+      align-items: center;
+  }
+
+  .nav-menu li {
+      margin-left: 20px;
+  }
+
+  .nav-link {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+      color: #e0f7fa;
+  }
+
+  .container {
+      /* height: calc(100vh - 60px); */
+      height: calc(100vh - 60px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      margin-top: 60px;
+  }
+
+  h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5em;
+      font-weight: 700;
+      color: white;
+  }
+
+  .upload-form-container {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row;
+      gap: 10px
+  }
+
+
+
+  .file-upload {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  }
+
+  .file-upload-btn {
+      background-color: #3C3D37;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .file-upload-btn:hover {
+      background-color: #45a049;
+  }
+
+  .file-upload input[type="file"] {
+      display: none;
+  }
+
+  .image-preview {
+      max-width: 250px;
+      min-width: 250px;
+      height: auto;
+      border-radius: 15px;
+      /* border: 2px solid #ddd; */
+      margin-bottom: 20px;
+      /* object-fit: cover; */
+      transition: min-width .4s ease-in-out;
+  }
+
+
+  .img-icons {
+      width: 13px;
+      margin-right: 3px;
+  }
+
+  .predict-btn {
+      background-color: #3C3D37;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .action-btn-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 10px;
+  }
+
+  .get-status-btn {
+      background-color: #3C3D37;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .get-status-btn:hover {
+      background-color: #45a049;
+  }
+
+  .predict-btn:hover {
+      background-color: #7cb342;
+  }
+
+  .spinner {
+      display: none;
+      margin-top: 20px;
+  }
+
+  .result-sheet {
+      position: absolute;
+      display: inline;
+      bottom: -500px;
+      left: 0;
+      width: 100%;
+      max-height: 80%;
+      color: #D9D9D9;
+      background-color: #3C3D37;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+      overflow-y: auto;
+      transition: bottom 0.5s ease-in-out;
+      padding: 20px;
+  }
+
+  .top-title-container {
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .top-title {
+      position: absolute;
+      cursor: default;
+      opacity: .2;
+  }
+
+
+  .result-sheet.open {
+      bottom: 0;
+  }
+
+  .result-sheet .close-btn {
+      background-color: transparent;
+      border: none;
+      font-size: 24px;
+      float: right;
+      cursor: pointer;
+  }
+
+  .result-sheet h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #4CAF50;
+  }
+
+  .result-sheet p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 1.6;
+  }
+
+  .result-sheet ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 20px;
+  }
+
+  .result-sheet li {
+      margin-bottom: 5px;
+  }
+
+  .Details-and-loader {
+      height: 10vh;
+  }
+
+  /* Main Disease Display */
+  .disease-name {
+      font-size: 1.5em;
+      font-weight: 600;
+      color: #2f4f4f;
+      margin-top: 30px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+  }
+
+  .disease-name:hover {
+      color: #4CAF50;
+  }
+
+  .disease-name::before {
+      content: 'Click here for detail';
+      position: absolute;
+      top: -7px;
+      right: 0;
+      font-size: .5rem;
+      color: rgba(255, 255, 255, 0.6);
+  }
+
+  .footer-space {
+      height: 5vh;
+  }
+
+  @media (max-width: 768px) {
+      h1 {
+          font-size: 2em;
+      }
+
+      .file-upload-btn,
+      .predict-btn {
+          width: 100%;
+      }
+
+      .image-preview {
+          max-width: 40px;
+      }
+
+      .result-sheet h2 {
+          font-size: 20px;
+      }
+  }
+
+
+  /* loader code */
+
+  .spinner,
+  .spinner div {
+      box-sizing: border-box;
+  }
+
+  .spinner {
+      display: none;
+      position: relative;
+      width: 80px;
+      height: 80px;
+  }
+
+  .spinner div {
+      display: inline-block;
+      position: absolute;
+      left: 8px;
+      width: 16px;
+      background: currentColor;
+      animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+
+  .spinner div:nth-child(1) {
+      left: 8px;
+      animation-delay: -0.24s;
+  }
+
+  .spinner div:nth-child(2) {
+      left: 32px;
+      animation-delay: -0.12s;
+  }
+
+
+
+  .spinner div:nth-child(3) {
+      left: 56px;
+      animation-delay: 0s;
+  }
+
+  @keyframes lds-facebook {
+      0% {
+          top: 8px;
+          height: 64px;
+      }
+
+      50%,
+      100% {
+          top: 24px;
+          height: 32px;
+      }
+  }
+
+  /* loader code ends here */
+
+  .credits {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+  }
+
+  .image-container {
+      position: relative;
+  }
+
+
+  .live-stream-text {
+      opacity: 0;
+      color: red;
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      bottom: 20px;
+      right: 10px;
+      padding: 7px;
+      font-size: 14px;
+      border-radius: 3px;
+      transition: opacity .4s ease-in-out;
+  }

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Detection - Config</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .mu-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 30px;
+            opacity: .8;
+
+            img {
+                width: 80px;
+            }
+
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #141514;
+            color: #333;
+            min-height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: white;
+        }
+
+        .form-container {
+            background-color: #3C3D37;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-input {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            color: white;
+            background-color: #444;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            background-color: #555;
+            outline: none;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        navbar {
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .credits {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mu-logo">
+        <img src="assets/images/mulogo.png" alt="">
+    </div>
+    <navbar><a href="index.html" style="text-decoration: none;">
+            <i style="text-decoration: none; color: white; font-style: normal; font-size: 1.7rem;">X</i></a>
+    </navbar>
+    <h1>Configuration</h1>
+    <div class="form-container">
+        <input type="text" id="source-address" class="form-input" placeholder="Source Address" required>
+        <input type="text" id="server-address" class="form-input" placeholder="Server Address" required>
+        <button class="submit-btn" onclick="saveData()">Submit</button>
+    </div>
+    <footer style="position: absolute; bottom: 0;">
+        <div class="credits">@Group:KPBE <br> Graduate school of Computer Engineering, 2019 Batch</div>
+    </footer>
+    <script>
+        function saveData() {
+            const sourceAddress = document.getElementById('source-address').value;
+            const serverAddress = document.getElementById('server-address').value;
+
+            localStorage.setItem('source-add', sourceAddress);
+            localStorage.setItem('server-add', serverAddress);
+
+            document.getElementById('source-address').value = '';
+            document.getElementById('server-address').value = '';
+
+            alert('Addresses saved successfully!');
+        }
+    </script>
+</body>
+
+</html>

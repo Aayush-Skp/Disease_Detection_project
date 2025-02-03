@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mu-logo">
+        <img src="assets/images/mulogo.png" alt="">
+    </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li style="display: flex; align-items: center; justify-content: center; gap: 3px;"><svg
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                        fill="rgba(255,255,255,1)">
+                        <path
+                            d="M12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H10.4142L12.4142 5ZM4 5V19H20V7H11.5858L9.58579 5H4ZM11 12H13V17H11V12ZM11 9H13V11H11V9Z">
+                        </path>
+                    </svg><a href="about.html" class="nav-link">About</a></li>
+                <li style="display: flex; align-items: center; justify-content: center; gap: 3px;"><svg
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                        fill="rgba(255,255,255,1)">
+                        <path
+                            d="M5.32943 3.27152C6.56252 2.83314 7.9923 3.10743 8.97927 4.0944C9.96652 5.08165 10.2407 6.51196 9.80178 7.74529L20.6465 18.5901L18.5252 20.7114L7.67936 9.86703C6.44627 10.3054 5.01649 10.0311 4.02952 9.04415C3.04227 8.0569 2.7681 6.62659 3.20701 5.39326L5.44373 7.62994C6.02952 8.21572 6.97927 8.21572 7.56505 7.62994C8.15084 7.04415 8.15084 6.0944 7.56505 5.50862L5.32943 3.27152ZM15.6968 5.15506L18.8788 3.38729L20.293 4.80151L18.5252 7.98349L16.7574 8.33704L14.6361 10.4584L13.2219 9.04415L15.3432 6.92283L15.6968 5.15506ZM8.62572 12.9332L10.747 15.0546L5.79729 20.0043C5.2115 20.5901 4.26175 20.5901 3.67597 20.0043C3.12464 19.453 3.09221 18.5792 3.57867 17.99L3.67597 17.883L8.62572 12.9332Z">
+                        </path>
+                    </svg><a href="config.html" class="nav-link">Config</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="image-container" class="image-container" style="position: relative; display: inline-block;">
+            <img id="image-preview" class="image-preview" src="assets/images/tomato.png" alt="Image Preview"
+                style="display: block; ">
+            <div class="live-stream-text" id="live-stream-text">Live Stream</div>
+        </div>
+
+        <h1>AI-Enabled Agricultural Monitoring System</h1>
+        <div class="action-btn-container">
+            <button id="get-status-btn" class=" get-status-btn">
+                <i class="fas fa-sync-alt"><img class="img-icons" src="assets/images/status2.png" alt=""></i> Crop
+                Status
+            </button>
+            <button id="get-monitor-btn" class=" get-status-btn">
+                <i class="fas fa-sync-alt"><img class="img-icons" src="assets/images/status2.png" alt=""></i> Live
+                Monitor
+            </button>
+            <form id="upload-form" class="upload-form-container">
+                <div class="file-upload">
+                    <label for="file-upload" class="file-upload-btn"><img class="img-icons" style="width: 17px;"
+                            src="assets/images/upload.png" alt="">
+                        Select Image
+                    </label>
+                    <input id="file-upload" type="file" accept="image/*" required>
+                </div>
+
+                <button type="submit" class="predict-btn"><img class="img-icons" style="width: 17px;"
+                        src="assets/images/process.png" alt="">Predict Disease</button>
+            </form>
+        </div>
+        <!-- <div class="footer-space"></div> -->
+        <div class="Details-and-loader">
+            <!-- <div class="spinner" id="loading-spinner">
+                <i class="" style="font-size: 1em; color: #b9dbba;">Predicting.....</i>
+            </div> -->
+            <div class="spinner" id="loading-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="disease-name" class="disease-name" style="display: none;"></div>
+        </div>
+
+    </div>
+    <div class="result-sheet" id="result-sheet">
+        <div class="top-title-container"><label class="top-title" for="top-title">Double click to toggle</label></div>
+
+        <button class="close-btn" id="close-btn" style="color:#D9D9D9;">x</button>
+        <h2 id="sheet-disease-name"></h2>
+        <p id="sheet-severity"></p>
+        <p id="sheet-harmfulness"></p>
+        <p id="sheet-treatment"></p>
+        <p id="sheet-pesticide"></p>
+        <p><strong>Prevention:</strong></p>
+        <ul id="sheet-prevention-list"></ul>
+    </div>
+
+    <footer>
+        <div class="credits">@Group:KPBE <br> Graduate school of Computer Engineering, 2019 Batch</div>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>

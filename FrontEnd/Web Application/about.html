@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #141514;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #e0f7fa;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: #e0f7fa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff6f61;
+        }
+
+        button {
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e55d50;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            /* background: #121212; */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .nav-logo {
+            padding-left: 15px;
+            padding-top: 10px;
+
+            img {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                width: 30px;
+                width: 80px;
+                opacity: .8;
+            }
+        }
+
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 110px 20px;
+            background: url('assets/images/background.jpg') no-repeat center center/cover;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            padding: 40px 20px;
+            gap: 20px;
+            height: 50vh;
+            margin-top: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .about-img {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .about button {
+            margin-top: 10px;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .team-card {
+            background-color: #121212;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .team-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        /* Supervisor Section */
+        .supervisor {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            gap: 20px;
+        }
+
+        .supervisor-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .supervisor-img {
+            flex: 1;
+            max-width: 150px;
+        }
+
+        /* Footer */
+        .footer {
+            /* background-color: #121212; */
+            text-align: center;
+            padding: 20px 20px 0 20px;
+            color: #333;
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .supervisor {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="assets/images/mulogo.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Main Page</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#supervisor">Supervisor</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-text">
+            <h2>About Our Project</h2>
+            <p>
+                AI-based crop disease detection leverages advanced technologies such as machine learning,
+                computer vision, and deep learning to identify and diagnose plant diseases accurately
+                and efficiently.
+            </p>
+            <p class="more-text" style="display:none;">
+                This not only helps farmers take timely action to prevent further spread but also reduces
+                the dependency on harmful chemical pesticides by enabling targeted treatments.
+            </p>
+            <button onclick="toggleText(this)">Read More</button>
+        </div>
+        <div class="about-img">
+            <img src="assets/images/tomato.png" alt="Tomato">
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="assets/Profile/Bikash Khatri.jpg" alt="Bikash Khatri">
+                <h3>Bikash Khatri</h3>
+                <p>Symbol No: 2304080005</p>
+            </div>
+            <div class="team-card">
+                <img src="assets/Profile/e6.jpg" alt="Elina Shah">
+                <h3>Elina Shah</h3>
+                <p>Symbol No: 2304080011</p>
+            </div>
+
+            <div class="team-card">
+                <img src="assets/Profile/krishna panthi.jpg" alt="Krishna Panthi">
+                <h3>Krishna Panthi</h3>
+                <p>Symbol No: 2304080012</p>
+            </div>
+            <div class="team-card">
+                <img src="assets/Profile/Prakash.jpg" alt="Prakash Shahi">
+                <h3>Prakash Shahi</h3>
+                <p>Symbol No: 2304080018</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Supervisor Section -->
+    <section id="supervisor" class="supervisor">
+        <div class="supervisor-text">
+            <h2>Supervisor</h2>
+            <p>
+                Er. Ramesh Ghimire, our esteemed supervisor and Assistant Professor at the Central Department of
+                Computer Engineering,
+                Graduate School of Engineering, has guided us with his expertise and invaluable insights throughout this
+                project.
+            </p>
+        </div>
+        <div class="supervisor-img">
+            <img src="assets/Profile/Ramesh.jpg" alt="Supervisor">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>@Group:KPBE <br> Graduate school of Computer Engineering, 2019 Batch.</p>
+    </footer>
+
+    <script>
+        function toggleText(button) {
+            const moreText = document.querySelector('.more-text');
+            if (moreText.style.display === 'none') {
+                moreText.style.display = 'inline';
+                button.textContent = 'Read Less';
+            } else {
+                moreText.style.display = 'none';
+                button.textContent = 'Read More';
+            }
+        }
+    </script>
+</body>
+
+</html>
