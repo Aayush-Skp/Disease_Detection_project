@@ -40,6 +40,3 @@ This project presents an AI-driven crop disease detection system addressing chal
 ## Contribution
 Contributions are welcome! Feel free to submit a pull request or raise an issue.
 
-## License
-This project is licensed under [Your Chosen License].
-
