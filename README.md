@@ -28,13 +28,14 @@ This project presents an AI-driven crop disease detection system addressing chal
 
 ## Screenshots & Demo
 ### Web Application Interface
-![Web App Screenshot](path/to/web_app_screenshot.png)
+![Web App Screenshot](FrontEnd/Images/web_interfacace1.png)
+![Web App Screenshot](FrontEnd/Images/web_interface_2.png)
 
 ### Mobile App Interface
-![Mobile App Screenshot](path/to/mobile_app_screenshot.png)
+![Mobile App Screenshot](FrontEnd/Images/app_interface.png)
 
 ### Hardware Setup
-![ESP32-CAM Setup](path/to/esp32_cam_setup.png)
+![ESP32-CAM Setup](FrontEnd/Images/esp32CAM.png)
 
 ## Contribution
 Contributions are welcome! Feel free to submit a pull request or raise an issue.
